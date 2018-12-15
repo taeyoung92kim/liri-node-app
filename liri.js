@@ -2,6 +2,7 @@ require("dotenv").config();
 var Spotify = require("node-spotify-api");
 var request = require("request");
 var fs = require("fs");
+var bandsintown = require("bandsintown")("codingbootcamp");
 
 var keys = require("./keys.js");
 
@@ -66,8 +67,6 @@ switch (liri) {
         break;
 
     case "concert-this":
-        var bandsintown = require("bandsintown")("codingbootcamp");
-
         if (subject) {
             bandsintown
                 .getArtistEventList(subject)
